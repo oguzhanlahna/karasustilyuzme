@@ -1,0 +1,368 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true"
+    CodeFile="Site.master.cs"
+    Inherits="karasustilyuzmecom.SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="tr">
+<head runat="server">
+    <title>Karasu Stil Yüzme Akademisi</title>
+
+    <!-- META -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- FAVICONS -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/logo/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/logo/favicon-16x16.png" />
+    <link rel="shortcut icon" href="assets/images/logo/favicon.ico" />
+    <link rel="apple-touch-icon" href="assets/images/logo/apple-touch-icon.png" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&amp;family=Roboto:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet" />
+
+    <!-- CSS (TEMEL) -->
+    <link rel="stylesheet" href="assets/css/bootstrap-grid.css" />
+    <link rel="stylesheet" href="assets/css/all.min.css" />
+    <link rel="stylesheet" href="assets/flaticon/flaticon.css" />
+    <link rel="stylesheet" href="assets/css/animate.css" />
+    <link rel="stylesheet" href="assets/css/swiper.min.css" />
+    <link rel="stylesheet" href="assets/css/slick.css" />
+    <link rel="stylesheet" href="assets/css/slick-theme.css" />
+    <link rel="stylesheet" href="assets/css/lightcase.css" />
+    <link rel="stylesheet" href="assets/css/jquery.nstSlider.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+<style>
+  /* Logo container sabitlenmişse ez */
+  .header-section a.logo,
+  .mobile-header a.logo {
+    width: 250px !important;   /* istersen 220/260 yap */
+    height: 100px !important;  /* logonun oranına göre */
+    display: inline-flex !important;
+    align-items: center !important;
+    flex: 0 0 auto !important;
+  }
+
+  /* Görseli container’a göre ölçekle */
+  .header-section a.logo img,
+  .mobile-header a.logo img {
+    width: 250px !important;
+    height: 100px !important;
+    object-fit: contain !important;
+    display: block !important;
+  }
+
+  /* Header yüksekliği yetmiyorsa büyüt */
+  .header-bottom { 
+    min-height: 110px !important; 
+  }
+
+  .footer .logo-contact img{
+  width:70px;
+  height:70px;
+  object-fit:contain;
+}
+</style>
+</head>
+
+<body>
+<form id="form1" runat="server">
+
+    <!-- ===================== -->
+    <!-- MOBILE MENU -->
+    <!-- ===================== -->
+    <div class="mobile-menu">
+        <nav class="mobile-header primary-menu d-xl-none">
+            <div class="header-logo">
+<img src="assets/images/logo/logo.png"
+     width="250"
+     height="100"
+     alt="Karasu Stil Yüzme">
+            </div>
+            <div class="header-bar" id="open-button">
+                <span></span><span></span><span></span>
+            </div>
+        </nav>
+
+        <nav class="menu">
+            <div class="mobile-menu-area d-xl-none">
+                <div class="mobile-menu-area-inner" id="scrollbar">
+                    <ul class="m-menu">
+                        <li><a class="active" href="anasayfa.aspx">Anasayfa</a></li>
+                        <li><a href="hakkimizda.aspx">Hakkımızda</a></li>
+                        <li><a href="kurslarimiz.aspx">Kurslarımız</a></li>
+                        <li><a href="blog.aspx">Blog</a></li>
+                        <li><a href="sikca-sorulan-sorular.aspx">Sık Sorulan Sorular</a></li>
+                        <li><a href="bize-ulasin.aspx">Bize Ulaşın</a></li>
+                    </ul>
+
+                    <ul class="social-link-list d-flex flex-wrap">
+                        <li><a href="https://www.facebook.com/karasustilyuzme" class="facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="https://www.instagram.com/karasustilyuzme/" class="instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="https://tr.pinterest.com/karasustilyuzme/" class="pinterest" target="_blank" rel="noopener"><i class="fab fa-pinterest"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- ===================== -->
+    <!-- HEADER (DESKTOP) -->
+    <!-- ===================== -->
+    <header class="header-section d-none d-xl-block">
+        <div class="header-top">
+            <div class="container">
+                <div class="htop-area row">
+                    <div class="htop-left">
+                        <p>Aziziye, Huzur Cd. No:6/1, 54500 Karasu/Sakarya, Türkiye</p>
+                    </div>
+                    <div class="htop-right">
+                        <ul class="htop-information">
+                            <li><a href="tel:+905536640754">+90 553 664 0754</a></li>
+                            <li><a href="mailto:akademi@karasustilyuzme.com">akademi@karasustilyuzme.com</a></li>
+                        </ul>
+                        <ul class="social-link-list">
+                            <li><a href="https://www.facebook.com/karasustilyuzme" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="https://www.instagram.com/karasustilyuzme/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="https://tr.pinterest.com/karasustilyuzme/" target="_blank" rel="noopener"><i class="fab fa-pinterest"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-bottom">
+            <nav class="primary-menu">
+                <div class="container">
+                    <div class="menu-area">
+                        <div class="row justify-content-between align-items-center">
+                            <a href="anasayfa.aspx" class="logo">
+                                <img src="assets/images/logo/logo.png" alt="Karasu Stil Yüzme Logo" width="190" height="60" loading="eager" fetchpriority="high" />
+                            </a>
+
+                            <div class="main-menu-area d-flex align-items-center">
+                                <ul class="main-menu d-flex align-items-center">
+                                    <li><a class="active" href="anasayfa.aspx">Anasayfa</a></li>
+                                    <li><a href="hakkimizda.aspx">Hakkımızda</a></li>
+                                    <li><a href="kurslarimiz.aspx">Kurslarımız</a></li>
+                                    <li><a href="blog.aspx">Blog</a></li>
+                                    <li><a href="sikca-sorulan-sorular.aspx">Sık Sorulan Sorular</a></li>
+                                    <li><a href="bize-ulasin.aspx">Bize Ulaşın</a></li>
+                                </ul>
+
+                                <div class="d-none d-xl-block">
+                                    <ul class="search-cart">
+                                        <li class="search"><i class="fas fa-search"></i></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===================== -->
+    <!-- MAIN CONTENT -->
+    <!-- ===================== -->
+    <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+
+
+<!-- ===================== -->
+<!-- CONTACT -->
+<!-- ===================== -->
+<section class="contact">
+    <div class="container">
+        <div class="section-wrapper row">
+            <div class="col-lg-4 col-12">
+                <div class="section-header">
+                    <h3>Bilgi ve Kayıt Formu</h3>
+                    <p>Yüzme kurslarımız hakkında bilgi almak veya kayıt olmak için formu doldurun, sizi arayalım.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-8 col-12">
+                <div class="contact-form">
+
+                    <asp:TextBox
+                        ID="txtMasterName"
+                        runat="server"
+                        placeholder="Ad Soyad" />
+
+                    <div class="cus_sel">
+                        <asp:DropDownList
+                            ID="ddlMasterCourse"
+                            runat="server">
+                            <asp:ListItem Text="Kurs Seçiniz" Value="" />
+                            <asp:ListItem Text="Çocuk Yüzme" Value="Çocuk Yüzme" />
+                            <asp:ListItem Text="Yetişkin Yüzme" Value="Yetişkin Yüzme" />
+                            <asp:ListItem Text="Özel Ders" Value="Özel Ders" />
+                            <asp:ListItem Text="Performans / Derece" Value="Performans / Derece" />
+                        </asp:DropDownList>
+                    </div>
+
+                    <asp:TextBox
+                        ID="txtMasterPhone"
+                        runat="server"
+                        placeholder="Telefon Numaranız" />
+
+                    <asp:TextBox
+                        ID="txtMasterEmail"
+                        runat="server"
+                        TextMode="Email"
+                        placeholder="E-posta (İsteğe bağlı)" />
+
+                    <asp:Button
+                        ID="btnMasterSubmit"
+                        runat="server"
+                        CssClass="btn"
+                        Text="Gönder"
+                        OnClick="btnMasterSubmit_Click"
+                        UseSubmitBehavior="false"
+                        OnClientClick="this.disabled=true; this.value='Gönderiliyor...';" />
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== -->
+<!-- NEWSLETTER -->
+<!-- ===================== -->
+<section class="news-letter padding-tb">
+    <div class="container">
+        <div class="section-header">
+            <h2>Kampanya ve Duyurular İçin Kayıt Olun</h2>
+            <p>Yeni dönem yüzme kursları, özel ders programları ve kampanyalardan haberdar olun.</p>
+        </div>
+
+        <div class="section-wrapper">
+            <div class="recent-news">
+
+                <asp:TextBox
+                    ID="txtNewsletterEmail"
+                    runat="server"
+                    TextMode="Email"
+                    placeholder="E-posta adresiniz" />
+
+                <asp:Button
+                    ID="btnNewsletterSubmit"
+                    runat="server"
+                    CssClass="btn"
+                    Text="Kayıt Ol"
+                    OnClick="btnNewsletterSubmit_Click"
+                    UseSubmitBehavior="false"
+                    OnClientClick="this.disabled=true; this.value='Kaydediliyor...';" />
+
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- ===================== -->
+    <!-- FOOTER -->
+    <!-- ===================== -->
+    <section class="footer padding-tb">
+        <div class="container">
+            <div class="section-wrapper">
+                <div class="footer-top">
+                    <div class="footer-rounding">
+                        <div class="footer-logo">
+                            <div class="footer-circle-wrapper"><div class="footer-circle"></div></div>
+                            <div class="footer-circle-wrapper"><div class="footer-circle"></div></div>
+
+                            <div class="logo-contact">
+<a href="anasayfa.aspx">
+  <img src="assets/images/logo/logo-footer.png"
+       alt="Karasu Stil Yüzme"
+       width="100"
+       height="100"
+       loading="lazy"
+       decoding="async" />
+</a>
+                                <ul>
+                                    <li><a href="mailto:akademi@karasustilyuzme.com">akademi@karasustilyuzme.com</a></li>
+                                    <li><a href="tel:+905536640754">+90 553 664 0754</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-content">
+                        <div class="footer-item footer-about">
+                            <h5>Menü</h5>
+                            <ul>
+                                <li><a href="anasayfa.aspx">Anasayfa</a></li>
+                                <li><a href="hakkimizda.aspx">Hakkımızda</a></li>
+                                <li><a href="kurslarimiz.aspx">Kurslarımız</a></li>
+                                <li><a href="blog.aspx">Blog</a></li>
+                                <li><a href="sikca-sorulan-sorular.aspx">Sık Sorulan Sorular</a></li>
+                                <li><a href="bize-ulasin.aspx">Bize Ulaşın</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="footer-item footer-contact">
+                            <h5>Biz Buradayız!</h5>
+                            <span>Karasu Tesisimiz</span>
+                            <p>Aziziye, Huzur Cd. No:6/1, 54500 Karasu/Sakarya, Türkiye</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Aziziye,+Huzur+Cd.+No:6/1,+54500+Karasu/Sakarya,+Türkiye"
+                               target="_blank" rel="noopener">Google Haritalarda Bul</a>
+
+                            <ul class="social-link-list d-flex flex-wrap">
+                                <li><a href="https://www.facebook.com/karasustilyuzme" class="facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="https://www.instagram.com/karasustilyuzme/" class="instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="https://tr.pinterest.com/karasustilyuzme/" class="pinterest" target="_blank" rel="noopener"><i class="fab fa-pinterest"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <div class="fb-right">
+                        <ul>
+                            <li><a href="gizlilik-politikasi.aspx">Gizlilik Politikası</a></li>
+                            <li><a href="sikca-sorulan-sorular.aspx">Sık Sorulan Sorular</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="fb-left">
+                        <p>Copyright 2026 &copy; <a href="anasayfa.aspx">Karasu Stil Yüzme Eğitim Merkezi</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- scrollToTop start here -->
+    <a href="#" class="scrollToTop"><i class="fas fa-angle-double-up"></i></a>
+    <!-- scrollToTop ending here -->
+
+</form>
+
+<!-- ===================== -->
+<!-- SCRIPTS (EN ALT) -->
+<!-- ===================== -->
+<script defer src="assets/js/jquery.js"></script>
+<script defer src="assets/js/bootstrap.min.js"></script>
+<script defer src="assets/js/swiper.min.js"></script>
+<script defer src="assets/js/fontawesome.min.js"></script>
+<script defer src="assets/js/jquery.counterup.min.js"></script>
+<script defer src="assets/js/jquery.easing.js"></script>
+<script defer src="assets/js/slick.min.js"></script>
+<script defer src="assets/js/lightcase.js"></script>
+<script defer src="assets/js/circular-countdown.js"></script>
+<script defer src="assets/js/jquery.countdown.min.js"></script>
+<script defer src="assets/js/waypoints.min.js"></script>
+<script defer src="assets/js/isotope.pkgd.min.js"></script>
+<script defer src="assets/js/wow.min.js"></script>
+<script defer src="assets/js/theia-sticky-sidebar.js"></script>
+<script defer src="assets/js/jquery.nstSlider.js"></script>
+<script defer src="assets/js/functions.js"></script>
+
+</body>
+</html>
